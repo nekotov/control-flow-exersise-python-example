@@ -1,0 +1,10 @@
+digraph "clusterВправа 1" {
+	graph [label="Вправа 1"]
+	1 [label="farengeyt = float(input('Enter the temperature in farengeyt: '))
+celcius = (farengeyt - 32) * 5 / 9
+print('The temperature in celcius is: ', celcius)
+"]
+	"1_calls" [label="float
+print" shape=box]
+	1 -> "1_calls" [label=calls style=dashed]
+}

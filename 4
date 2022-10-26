@@ -1,0 +1,38 @@
+digraph "clusterЗнайти бiльше iз чисел A, B, C." {
+	graph [label="Знайти бiльше iз чисел A, B, C."]
+	1 [label="a = int(input('Введiть перше число: '))
+b = int(input('Введiть друге число: '))
+c = int(input('Введiть третє число: '))
+if a > b and a > c:
+"]
+	"1_calls" [label="int
+int
+int" shape=box]
+	1 -> "1_calls" [label=calls style=dashed]
+	2 [label="print(a)
+"]
+	"2_calls" [label=print shape=box]
+	2 -> "2_calls" [label=calls style=dashed]
+	1 -> 2 [label="a > b and a > c"]
+	4 [label="if b > a and b > c:
+"]
+	5 [label="print(b)
+"]
+	"5_calls" [label=print shape=box]
+	5 -> "5_calls" [label=calls style=dashed]
+	4 -> 5 [label="b > a and b > c"]
+	7 [label="if c > a and c > b:
+"]
+	8 [label="print(c)
+"]
+	"8_calls" [label=print shape=box]
+	8 -> "8_calls" [label=calls style=dashed]
+	7 -> 8 [label="c > a and c > b"]
+	10 [label="print('Числа рiвнi')
+"]
+	"10_calls" [label=print shape=box]
+	10 -> "10_calls" [label=calls style=dashed]
+	7 -> 10 [label="(not (c > a and c > b))"]
+	4 -> 7 [label="(not (b > a and b > c))"]
+	1 -> 4 [label="(not (a > b and a > c))"]
+}

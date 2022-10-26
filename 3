@@ -1,0 +1,28 @@
+digraph "clusterЗнайти бiльше iз чисел Num1, Num2." {
+	graph [label="Знайти бiльше iз чисел Num1, Num2."]
+	1 [label="num1 = int(input('Введiть перше число: '))
+num2 = int(input('Введiть друге число: '))
+if num1 > num2:
+"]
+	"1_calls" [label="int
+int" shape=box]
+	1 -> "1_calls" [label=calls style=dashed]
+	2 [label="print(num1)
+"]
+	"2_calls" [label=print shape=box]
+	2 -> "2_calls" [label=calls style=dashed]
+	1 -> 2 [label="num1 > num2"]
+	4 [label="if num1 < num2:
+"]
+	5 [label="print(num2)
+"]
+	"5_calls" [label=print shape=box]
+	5 -> "5_calls" [label=calls style=dashed]
+	4 -> 5 [label="num1 < num2"]
+	7 [label="print('Числа рiвнi')
+"]
+	"7_calls" [label=print shape=box]
+	7 -> "7_calls" [label=calls style=dashed]
+	4 -> 7 [label="(num1 >= num2)"]
+	1 -> 4 [label="(num1 <= num2)"]
+}
